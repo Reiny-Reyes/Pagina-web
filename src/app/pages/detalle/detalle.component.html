@@ -1,0 +1,58 @@
+<div class="detalle-container" *ngIf="producto">
+
+<div class="detalle-grid">
+
+<div class="imagen-producto">
+
+<img [src]="producto.imagen">
+
+</div>
+
+<div class="info-producto">
+
+<span class="categoria">
+{{producto.categoria}}
+</span>
+
+<h1 class="titulo">
+{{producto.nombre}}
+</h1>
+
+<div class="rating">
+⭐ ⭐ ⭐ ⭐ ⭐
+<span>(127 reseñas)</span>
+</div>
+
+<p class="descripcion">
+{{producto.descripcion}}
+</p>
+
+<h2 class="precio">
+${{producto.precio}}
+</h2>
+
+<div class="botones">
+
+<button class="btn-comprar">
+Comprar Ahora
+</button>
+
+<button class="btn-carrito"
+(click)="agregarCarrito()">
+🛒 Añadir al carrito
+</button>
+
+</div>
+
+<div class="envio">
+
+🚚 Envío gratis  
+<span>En pedidos superiores a $50</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>

@@ -1,0 +1,167 @@
+<div class="shop-container">
+
+  <!-- SIDEBAR CATEGORIAS -->
+
+  <div class="sidebar">
+
+    <h2>Categorías</h2>
+
+    <ul>
+
+      <li
+      [class.active]="categoriaSeleccionada==='todos'"
+      (click)="filtrar('todos')">
+      Todos
+      </li>
+
+      <li (click)="filtrar('smartphones')">
+      Smartphones
+      </li>
+
+      <li (click)="filtrar('laptops')">
+      Laptops
+      </li>
+
+      <li (click)="filtrar('audio')">
+      Audio
+      </li>
+
+      <li (click)="filtrar('tablets')">
+      Tablets
+      </li>
+
+      <li (click)="filtrar('smartwatches')">
+      Smartwatches
+      </li>
+
+      <li (click)="filtrar('accesorios')">
+      Accesorios
+      </li>
+
+      <li (click)="filtrar('camaras')">
+      Cámaras
+      </li>
+
+      <li (click)="filtrar('drones')">
+      Drones
+      </li>
+
+    </ul>
+
+  </div>
+
+
+  <!-- CONTENIDO -->
+
+  <div class="contenido">
+
+    <!-- BUSCADOR -->
+
+    <div class="buscador">
+
+      <input
+      type="text"
+      placeholder="Buscar productos..."
+      [(ngModel)]="busqueda"
+      (input)="buscar()">
+
+    </div>
+
+
+    <!-- PRODUCTOS -->
+
+    <div class="productos-grid">
+
+      <div
+      class="producto-card"
+      *ngFor="let producto of productosPagina()"
+      [routerLink]="['/detalle', producto.id]">
+
+        <!-- IMAGEN -->
+
+        <div class="card-img">
+
+          <img [src]="producto.imagen">
+
+          <span
+          *ngIf="producto.descuento"
+          class="badge descuento">
+          -{{producto.descuento}}%
+          </span>
+
+          <span
+          *ngIf="producto.destacado"
+          class="badge destacado">
+          ⭐ Destacado
+          </span>
+
+        </div>
+
+
+        <!-- CONTENIDO -->
+
+        <div class="card-body">
+
+          <span class="categoria">
+          {{producto.categoria}}
+          </span>
+
+          <h3>
+          {{producto.nombre}}
+          </h3>
+
+          <p>
+          {{producto.descripcion}}
+          </p>
+
+          <div class="precio">
+
+            <div>
+
+              <span
+              *ngIf="producto.precioOriginal"
+              class="precio-original">
+              ${{producto.precioOriginal}}
+              </span>
+
+              <span class="precio-final">
+              ${{producto.precio}}
+              </span>
+
+            </div>
+
+            <button
+            (click)="agregar(producto); $event.stopPropagation()"
+            class="btn-cart">
+
+            🛒
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- PAGINACION -->
+
+    <div class="paginacion">
+
+      <button
+      *ngFor="let pagina of [].constructor(totalPaginas); let i=index"
+      (click)="cambiarPagina(i+1)"
+      [class.activa]="paginaActual===i+1">
+
+      {{i+1}}
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

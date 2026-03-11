@@ -1,0 +1,36 @@
+<nav class="bg-white shadow">
+
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+<h1 class="text-xl font-bold text-blue-600">
+TechStore
+</h1>
+
+<div class="flex gap-8 items-center">
+
+<a routerLink="/" class="text-gray-600 hover:text-blue-600">
+Inicio
+</a>
+
+<a routerLink="/productos" class="text-gray-600 hover:text-blue-600">
+Productos
+</a>
+
+<a routerLink="/carrito" class="relative text-xl">
+
+🛒
+
+<span
+class="absolute -top-2 -right-3 bg-red-500 text-white text-xs px-2 rounded-full">
+
+{{carrito.totalItems()}}
+
+</span>
+
+</a>
+
+</div>
+
+</div>
+
+</nav>

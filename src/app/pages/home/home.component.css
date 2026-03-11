@@ -1,0 +1,24 @@
+.home-hero{
+  height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+
+  background:
+  linear-gradient(to right, rgba(0,0,0,.85), rgba(0,0,0,.4)),
+  url("/assets/banner.jpg");
+
+  background-size:cover;
+  background-position:center;
+}
+
+.home-content{
+  max-width:700px;
+}
+
+.home-content h1{
+  font-size:60px;
+  font-weight:700;
+}
