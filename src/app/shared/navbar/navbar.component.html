@@ -1,17 +1,44 @@
 <nav class="navbar">
 
-  <div class="logo" routerLink="/">
-    <img src="assets/logo-techstore.png" class="logo-img" alt="TechStore">
-    <span>TechStore</span>
+  <!-- Logo -->
+
+  <div class="brand" routerLink="/">
+
+    <div class="logo-icon">
+      T
+    </div>
+
+    <span class="brand-name">
+      TechStore
+    </span>
+
   </div>
 
-  <div class="nav-links">
-    <a routerLink="/">Home</a>
+  <!-- Menu -->
+
+  <div class="nav-menu">
+
+    <a routerLink="/">Inicio</a>
+
     <a routerLink="/productos">Productos</a>
 
-    <a routerLink="/carrito">
-      🛒 {{ carrito.totalItems() }}
-    </a>
+    <a routerLink="/ofertas">Ofertas</a>
+
+  </div>
+
+  <!-- Icons -->
+
+  <div class="nav-icons">
+
+    <span class="icon">👤</span>
+
+    <span class="icon cart" routerLink="/carrito">
+      🛒
+      <span class="cart-count">
+        {{ carrito.totalItems() }}
+      </span>
+    </span>
+
   </div>
 
 </nav>
