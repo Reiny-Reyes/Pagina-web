@@ -7,3 +7,23 @@ body{
   background:#f5f5f5;
   font-family: system-ui;
 }
+
+.logo-container {
+    display: flex;
+    align-items: center; /* Alinea verticalmente al centro */
+    gap: 10px;           /* Espacio entre el icono y el texto */
+    padding: 10px;
+}
+
+.nav-logo {
+    width: 40px;         /* Ajusta el tamaño según necesites */
+    height: 40px;
+    border-radius: 8px;  /* Para mantener los bordes redondeados */
+}
+
+.brand-name {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;      /* Color blanco como en tu imagen */
+}
