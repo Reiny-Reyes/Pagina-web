@@ -1,107 +1,87 @@
 .navbar{
-  position:sticky;
-  top:0;
-  z-index:1000;
-
-  backdrop-filter:blur(10px);
-  background:rgba(2,6,23,.85);
-
-  border-bottom:1px solid rgba(255,255,255,.05);
-  padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 40px;
+background:white;
+box-shadow:0 2px 8px rgba(0,0,0,0.05);
 }
-
-
-/* CONTENEDOR */
-.nav-container{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
 
 /* LOGO */
+
 .logo{
-  font-size:22px;
-  font-weight:700;
-  cursor:pointer;
-  letter-spacing:1px;
-  color:white;
+display:flex;
+align-items:center;
+gap:3px;
+cursor:pointer;
 }
 
-.logo span{
-  color:#06b6d4;
+.logo-img{
+height:1px;
+width:auto;
 }
 
+/* TEXTO */
+
+.logo-text{
+font-size:22px;
+font-weight:700;
+color:#1f2937;
+}
 
 /* LINKS */
+
 .nav-links{
-  display:flex;
-  gap:30px;
+display:flex;
+gap:25px;
+align-items:center;
 }
 
 .nav-links a{
-  text-decoration:none;
-  color:#cbd5e1;
-  font-weight:500;
-  position:relative;
-  transition:.3s;
+text-decoration:none;
+color:#333;
+font-weight:500;
 }
 
-.nav-links a:hover{
-  color:white;
-}
-
-.nav-links a::after{
-  content:"";
-  position:absolute;
-  bottom:-6px;
-  left:0;
-  width:0%;
-  height:2px;
-  background:#06b6d4;
-  transition:.3s;
-}
-
-.nav-links a:hover::after{
-  width:100%;
-}
-
-.nav-links a.active{
-  color:white;
-}
-
-
-/* CARRITO */
 .cart{
-  position:relative;
-  cursor:pointer;
-}
-
-.cart-icon{
-  font-size:22px;
+position:relative;
+font-size:20px;
 }
 
 .cart-count{
-  position:absolute;
-  top:-8px;
-  right:-10px;
-
-  background:#06b6d4;
-  color:black;
-
-  font-size:12px;
-  font-weight:700;
-
-  padding:4px 8px;
-  border-radius:20px;
+position:absolute;
+top:-8px;
+right:-10px;
+background:#2563eb;
+color:white;
+border-radius:50%;
+padding:3px 7px;
+font-size:12px;
 }
 
-@keyframes bounce{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.3);}
-  100%{transform:scale(1);}
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 40px;
+  background:white;
+  box-shadow:0 2px 8px rgba(0,0,0,0.05);
 }
 
-.bounce{
-  animation:bounce .3s ease;
+/* contenedor logo */
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  cursor:pointer;
+}
+
+/* tamaño real del logo */
+
+.logo-img{
+  height:40px !important;
+  width:auto !important;
+  max-width:150px;
+  object-fit:contain;
 }

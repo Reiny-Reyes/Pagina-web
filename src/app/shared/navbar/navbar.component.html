@@ -1,36 +1,17 @@
-<nav class="bg-white shadow">
+<nav class="navbar">
 
-<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+  <div class="logo" routerLink="/">
+    <img src="assets/logo-techstore.png" class="logo-img" alt="TechStore">
+    <span>TechStore</span>
+  </div>
 
-<h1 class="text-xl font-bold text-blue-600">
-TechStore
-</h1>
+  <div class="nav-links">
+    <a routerLink="/">Home</a>
+    <a routerLink="/productos">Productos</a>
 
-<div class="flex gap-8 items-center">
-
-<a routerLink="/" class="text-gray-600 hover:text-blue-600">
-Inicio
-</a>
-
-<a routerLink="/productos" class="text-gray-600 hover:text-blue-600">
-Productos
-</a>
-
-<a routerLink="/carrito" class="relative text-xl">
-
-🛒
-
-<span
-class="absolute -top-2 -right-3 bg-red-500 text-white text-xs px-2 rounded-full">
-
-{{carrito.totalItems()}}
-
-</span>
-
-</a>
-
-</div>
-
-</div>
+    <a routerLink="/carrito">
+      🛒 {{ carrito.totalItems() }}
+    </a>
+  </div>
 
 </nav>

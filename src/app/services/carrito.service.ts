@@ -1,26 +1,61 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-providedIn: 'root'
+  providedIn: 'root'
 })
 export class CarritoService {
 
-items:any[]=[];
+  carrito:any[] = [];
 
-agregar(producto:any){
-this.items.push(producto);
-}
+  constructor(){}
 
-eliminar(producto:any){
-this.items=this.items.filter(p=>p!==producto);
-}
+  agregar(producto:any){
 
-total(){
-return this.items.reduce((sum,p)=>sum+p.precio,0);
-}
+    const existe = this.carrito.find(p => p.id === producto.id);
 
-totalItems(){
-return this.items.length;
-}
+    if(existe){
+
+      existe.cantidad++;
+
+    }else{
+
+      this.carrito.push({
+        ...producto,
+        cantidad:1
+      });
+
+    }
+
+  }
+
+  obtener(){
+
+    return this.carrito;
+
+  }
+
+  eliminar(producto:any){
+
+    this.carrito = this.carrito.filter(
+      p => p.id !== producto.id
+    );
+
+  }
+
+  vaciar(){
+
+    this.carrito = [];
+
+  }
+
+  /* 🔥 TOTAL DE PRODUCTOS PARA EL NAVBAR */
+
+  totalItems(){
+
+    return this.carrito.reduce(
+      (total,producto)=> total + producto.cantidad ,0
+    );
+
+  }
 
 }
